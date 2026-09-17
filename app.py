@@ -18,12 +18,13 @@ canvas_result = st_canvas(
     height=280,
     width=280,
     drawing_mode="freedraw",
+    update_streamlit=True,
+    return_image_data=True,
     key="mirror_canvas",
 )
 
 # 3. Image Flipping Logic
 if st.button("Flip Image", type="primary"):
-    # Check if user has drawn on the canvas
     if canvas_result.image_data is not None and canvas_result.image_data.any():
         original_img = canvas_result.image_data
 
